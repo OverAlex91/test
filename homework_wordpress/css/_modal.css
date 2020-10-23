@@ -1,0 +1,204 @@
+/*стили для модального окна*/
+
+.page-content {
+    position: relative;
+    transition: 0.5s;
+}
+
+.page-content_active {
+    overflow: hidden;
+}
+
+.popup-overlay {
+    position: relative;
+}
+
+.popup-overlay_active {
+    /*    position: fixed;*/
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+    background-size: cover;
+    filter: brightness(40%);
+}
+
+.popup-overlay_blur {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+    background-size: cover;
+    filter: blur(5px);
+    transition: 0.5s;
+}
+
+.modal_window__main {
+    display: none;
+    opacity: 0;
+}
+
+.modal_window__main_active {
+    display: block;
+    width: 750px;
+    max-width: 100%;
+    height: 345px;
+    max-height: 100%;
+    position: fixed;
+    top: 25%;
+    left: 30%;
+    z-index: 130;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+@media screen and (max-width:1440px) {
+    .modal_window__main_active {
+        left: 25%;
+    }
+}
+
+.modal_window__main_title {
+    width: 100%;
+    height: 68px;
+    text-align: center;
+    background: #ff9d00;
+}
+
+.modal__main_title {
+    font-size: 21px;
+    line-height: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding-top: 23px;
+}
+
+.main_title_modal_close span {
+    position: relative;
+}
+
+.main_title_modal_close span::after,
+.main_title_modal_close span::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: -391px;
+    width: 15px;
+    height: 2px;
+    background: #fff;
+}
+
+.main_title_modal_close span::before {
+    transform: rotate(-45deg);
+}
+
+.main_title_modal_close span::after {
+    transform: rotate(45deg);
+}
+
+.modal__main-text {
+    background: #373737 url(../img/background_modal.jpg) center no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 280px;
+}
+
+.modal__main-text__form {
+    text-align: center;
+}
+
+.modal__main-text__form_title {
+    padding-top: 40px;
+    font-size: 30px;
+    line-height: 27px;
+    font-weight: 400;
+    color: #ffffff;
+
+}
+
+.modal__main-text__form_title span {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.telephone_form_label {
+    display: block;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 300;
+    color: #ffffff;
+    padding: 23px 0 17px 0;
+}
+
+.telephone_modal_span {
+    display: block;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.modal-input {
+    padding: 20px 222px 20px 18px !important;
+    margin: 0;
+}
+
+.modal-submit {
+    margin-left: 6px;
+}
+
+/* конец стилей для модального окна*/
+
+/* cтили модального окна при отправке формы*/
+
+.modal_window_thanks {
+    display: none;
+    opacity: 0;
+}
+
+.modal_window_thanks-active {
+    display: block;
+    opacity: 1;
+    transition: all 1s;
+    z-index: 150;
+    width: 300px;
+    height: 150px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #ff9d00;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.modal_window_thanks__close {
+    position: relative;
+    cursor: pointer;
+}
+
+.modal_window_thanks__close::before,
+.modal_window_thanks__close::after {
+    position: absolute;
+    content: '';
+    width: 24px;
+    height: 2px;
+    background-color: #000;
+    top: -67px;
+    right: -34px;
+}
+
+.modal_window_thanks__close::before {
+    transform: rotate(-45deg);
+}
+
+.modal_window_thanks__close::after {
+    transform: rotate(45deg);
+}
+
+.modal_window_thanks_text {
+    margin-top: 15px;
+}

@@ -1,0 +1,89 @@
+#production {
+    padding: calc((var(--base-size-xl) * 4) - 7px) 0 calc((var(--base-size-l) * 3) - 1px) 0;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.production_title {
+    text-align: center;
+    font-size: 27px;
+    line-height: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--main-text-color);
+    margin-bottom: calc((var(--base-size-l) * 3) + 3px);
+    position: relative;
+}
+
+.production_title:after {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    right: 433px;
+    background-image: url('../img/production/wave.png');
+    width: 46px;
+    height: 6px;
+    z-index: 1;
+
+}
+
+.production_img {
+    text-align: center;
+}
+
+.img_full {
+    min-width: 421px;
+    min-height: 281px;
+}
+
+.production_text {
+    text-align: center;
+    font-size: 20px;
+    line-height: 19px;
+    font-weight: 500;
+    color: var(--main-text-color);
+    margin: calc(var(--base-size-xl) + 3px) 0 calc(var(--base-size-s) * 7) 0;
+}
+
+.production_button_block {
+    display: flex;
+    justify-content: center;
+    margin-bottom: calc((var(--base-size-l) * 3) - 1px);
+}
+
+.button-o {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: var(--main-text-color);
+    padding: calc(var(--base-size-xl) - 1px) calc((var(--base-size-l) * 2) - 1px);
+    opacity: 0.5;
+    border-radius: var(--main-border-radius);
+    border: 1px solid #373737;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: var(--base-size-l);
+}
+
+.production-button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    padding: var(--base-size-xl) calc((var(--base-size-l) * 2) + 1px);
+    background: var(--button-bgcolor);
+    color: var(--button-text-color);
+    border-radius: var(--main-border-radius);
+    outline: none;
+    cursor: pointer;
+    border: none;
+    vertical-align: middle;
+}
+
+.production-button:hover {
+    background: var(--button-bgcolor-hover);
+}
+
+.production-button:focus {
+    background: var(--button-bgcolor-focus);
+}

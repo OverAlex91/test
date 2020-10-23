@@ -1,0 +1,104 @@
+/* блок с шапкой сайта */
+@import url(_header.css);
+
+/* начало блока main */
+@import url(_main.css);
+
+/* начало блока advantages*/
+@import url(_advantages.css);
+
+/* начало блока production */
+@import url(_production.css);
+
+/* начало блока offer */
+@import url(_offer.css);
+
+/* начало блока factory */
+@import url(_factory.css);
+
+/* начало блока partners*/
+@import url(_partners.css);
+
+/* начало блока review */
+@import url(_review.css);
+
+/* начало блока map */
+@import url(_map.css);
+
+/* начало стилей для модальных окон*/
+
+@import url(_modal.css);
+
+/* медиа запросы */
+@import url(_media.css);
+
+/* css переменные приложения */
+:root {
+
+    /* переменные цвета*/
+    --title-text-color: #fff;
+    --main-bgcolor: #fff;
+    --main-text-color: #373737;
+    --title-adventages-color: #f39003;
+
+    /* переменные цвета кнопок*/
+    --button-text-color: #fff;
+    --button-bgcolor: #ff9d00;
+    --button-bgcolor-hover: #ff8E00;
+    --button-bgcolor-focus: #ff8800;
+
+    /* переменные min radius*/
+    --main-border-radius: 4px;
+
+    /* переменные отступов*/
+    --base-size-s: 4px;
+    --base-size-m: 8px;
+    --base-size-l: 12px;
+    --base-size-xl: 16px;
+}
+
+
+* {
+    color: var(--main-text-color);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    position: relative;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* стили блока footer*/
+
+.footer {
+    display: flex;
+    justify-content: center;
+    height: 88px;
+    background: #1b1b1b;
+}
+
+.footer__text {
+    opacity: 0.5;
+    font-family: Roboto;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 300;
+    color: var(--title-text-color);
+    margin-top: calc((var(--base-size-xl) * 2) + 4px);
+}
