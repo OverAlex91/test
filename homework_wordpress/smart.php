@@ -28,15 +28,15 @@ $mail->addAddress('onix.dn@gmail.com');     // Add a recipient
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Это тема сообщения';
+$mail->Subject = 'Заявка с сайта Добрый Картон';
 $mail->Body    = '
 	Пользователь оставил свои данные <br> 
-	Телефон: '.$phone;
+	Номер телефона: '.$phone;
 $mail->AltBody = '';
 
 if(!$mail->send()) {
     echo 'Error';
 } else {
-echo '<script>alert("Сообщение отправлено")</script>';
+echo '<script>alert("Спасибо за заявку")</script>';
 }
 ?>
