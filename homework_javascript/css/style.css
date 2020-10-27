@@ -1,0 +1,63 @@
+body {
+    position: relative;
+}
+
+.autorisation_form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    transform: translateX(-50%, -50%);
+
+}
+
+input {
+    outline: none;
+}
+
+input[type="text"] {
+    width: 60%;
+    height: 20px;
+}
+
+.autorisation_form__field {
+    border-radius: 10px;
+    border: 1px solid green;
+    background: rgba(154, 205, 50, 0.5);
+}
+
+.autorisation_form_legend {
+    font-size: 20px;
+    margin-left: 15px;
+    margin-bottom: 3px;
+}
+
+.autorisation_form_label {
+    display: block;
+    margin: 7px 0 7px 0;
+}
+
+.form__button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 5px 5px 5px 5px;
+    padding: 6px 6px;
+    justify-self: right;
+    outline: none;
+    border: 1px solid #005300;
+    cursor: pointer;
+    background: green;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+button:hover {
+    background: #016701;
+    border: 1px solid #004300;
+}
