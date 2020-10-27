@@ -1,5 +1,9 @@
-body {
+.page {
     position: relative;
+}
+
+.second-page {
+    background-color: #ead669;
 }
 
 .autorisation_form {
@@ -16,6 +20,8 @@ body {
 
 input {
     outline: none;
+    border-radius: 3px;
+    border: 1px solid #005300;
 }
 
 input[type="text"] {
@@ -27,12 +33,12 @@ input[type="text"] {
     border-radius: 10px;
     border: 1px solid green;
     background: rgba(154, 205, 50, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .autorisation_form_legend {
     font-size: 20px;
-    margin-left: 15px;
-    margin-bottom: 3px;
+    margin-left: 20px;
 }
 
 .autorisation_form_label {
