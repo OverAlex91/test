@@ -9,23 +9,24 @@
 .autorisation_form {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 300px;
     height: 600px;
     position: fixed;
     top: 40%;
     left: 40%;
     transform: translateX(-50%, -50%);
-
 }
 
 input {
     outline: none;
     border-radius: 3px;
     border: 1px solid #005300;
+    margin-left: 10px;
 }
 
 input[type="text"] {
-    width: 60%;
+    min-width: 60%;
+    width: 80%;
     height: 20px;
 }
 
