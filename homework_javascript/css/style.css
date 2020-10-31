@@ -1,3 +1,11 @@
+
+p,
+h1,
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
 .page {
     position: relative;
 }
@@ -12,6 +20,7 @@
     width: 300px;
     height: 600px;
     position: fixed;
+    z-index: 10;
     top: 40%;
     left: 40%;
     transform: translateX(-50%, -50%);
@@ -64,7 +73,30 @@ button {
     color: #ffffff;
 }
 
+.button_click {
+    background: orange;
+    border: 1px solid #e39609;
+}
+
+.button_click:hover {
+    background: #e5980a;
+    border: 1px solid #af7306;
+    color: #d1d0d0;
+}
+
 button:hover {
     background: #016701;
     border: 1px solid #004300;
+}
+
+.text {
+    width: 400px;
+    border-radius: 10px;
+    border: 1px solid #fa5106;
+    background: rgba(239, 95, 32, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.text__content {
+    padding: 15px;
 }
