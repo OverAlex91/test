@@ -1,3 +1,8 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 p,
 h1,
@@ -99,4 +104,32 @@ button:hover {
 
 .text__content {
     padding: 15px;
+}
+
+.input_text {
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.input_text p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.input_text form label {
+    display: block;
+    margin-left: 10px;
+    margin-bottom: 7px;
+}
+
+.input_text form input {
+    min-width: 70%;
+    width: 90%;
+    height: 25px;
+}
+
+
+
+.input_text form button {
+    margin-left: 275px;
 }
