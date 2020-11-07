@@ -1,63 +1,48 @@
-let header = document.querySelector('.page');
-let button = document.querySelector('.button_click');
+//Task - 4 задание 1
 
 console.log(header);
 console.log(button);
+let year = prompt('В каком году была опубликована спецификация ECMAScript-2015?', '');
+let message = (year < 2015) ? 'Это слишком рано!' :
+    (year > 2015) ? 'Это поздновато...' :
+    'Верно';
+alert(message);
 
-//обработчик событий onclick
 button.onclick = function () {
-    console.log('Кнопка нажата!');
     header.classList.toggle('second-page');
 };
+//Task - 4 задание 2
 
-//блок кода и переменная для работы с методом textContent
-let message = document.querySelector('.text__content');
-console.log(message.textContent);
-
-//блок кода и переменная для работы со свойством onsubmit
-let some_form = document.querySelector('.autorisation_form');
-let onsubmit_message = document.querySelector('.autorisation_form_legend');
-let input_login = document.getElementById('login');
-let input_password = document.getElementById('password');
-
-some_form.onsubmit = function (event) {
-    event.preventDefault();
-
-    console.log('Форма отправлена!');
-
-    //замена текста на 'Форма отправлена!'
-    onsubmit_message.textContent = 'Форма отправлена!';
-
-    //вывод в консоль значений из input
-    console.log(input_login.value);
-    console.log(input_password.value);
+let age = prompt('Сколько вам лет?', 18);
+if (age < 3) {
+    alert('Привет, малыш!');
+} else if (age < 18) {
+    alert('Привет!');
+} else if (age < 100) {
+    alert('Здравствуйте!');
+} else {
+    alert('Какой интересный возраст!');
 }
 
-//Получение данных из поля Task 3
+//Task - 4 задание со звездочкой
 
-let paragraph = document.querySelector('.input_text__content');
-let input_text = document.getElementById('type_text');
-let text_form = document.querySelector('.text_form');
+let exam = prompt('Какова ваша оценка за экзамен?', 90);
+let projects = prompt('Cколько вами было сдано проектов?', 0);
+let finalGrade = `Вы сдали экзамен на - ${exam} баллов. И сдали ${projects} проекта(ов)`;
 
-text_form.onsubmit = function (evt) {
-    evt.preventDefault();
-
-    paragraph.textContent = input_text.value;
+if (exam > 90 || projects > 10) {
+    alert(`${finalGrade} Ваша оценка - 100!`);
+} else if (exam > 75 && projects >= 5) {
+    alert(`${finalGrade} Ваша оценка - 90!`);
+} else if (exam > 50 && projects >= 2) {
+    alert(`${finalGrade} Ваша оценка - 75!`);
+} else {
+    alert(`${finalGrade} Ваша оценка - 0!`);
 }
 
+/* Если честно, то я не совсем понял как добиться того, что бы функция вызывалась так же как в задании, то есть в виде  finalGrade(100, 12);  // 100
+                finalGrade(99, 0);    // 100
+                finalGrade(10, 15);   // 100
+Но в целом инструкция работает, оценки показываются верно, по 4ем условиям.
+*/
 
-//Задачка по приоритетам Task 3
-
-let x = 55 * (7 + 2) / (4 + 2);
-alert(`Решение задачки по приоритетам - ${x}`);
-
-
-//Счетчик
-let heart = document.querySelector('.heart');
-let likesNumber = document.querySelector('.likes-number');
-let counter = 0;
-heart.onclick = function () {
-    likesNumber.textContent = counter;
-    counter++;
-    heart.classList.toggle('added');
-}
