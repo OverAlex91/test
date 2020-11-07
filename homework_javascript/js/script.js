@@ -1,16 +1,12 @@
 //Task - 4 задание 1
 
-console.log(header);
-console.log(button);
 let year = prompt('В каком году была опубликована спецификация ECMAScript-2015?', '');
 let message = (year < 2015) ? 'Это слишком рано!' :
     (year > 2015) ? 'Это поздновато...' :
     'Верно';
+
 alert(message);
 
-button.onclick = function () {
-    header.classList.toggle('second-page');
-};
 //Task - 4 задание 2
 
 let age = prompt('Сколько вам лет?', 18);
@@ -45,4 +41,3 @@ if (exam > 90 || projects > 10) {
                 finalGrade(10, 15);   // 100
 Но в целом инструкция работает, оценки показываются верно, по 4ем условиям.
 */
-
