@@ -1,142 +1,66 @@
 'use strict';
-//Реализуйте функцию sum(...args), которая суммирует все свои аргументы, пятью разными способами:
-//цикл for
-const sum = (...num) => {
-    const newArr = [...num];
-    let result = 0;
-    for (let i = 0; i < newArr.length; i++) {
-        result = result + newArr[i];
-    }
-    return result;
-};
-console.log('Цикл for: sum(1, 2, 3, 4, 5) // ' +
-    sum(1, 2, 3, 4, 5));
-
-//цикл for of
-
-const sum1 = (...num) => {
-    const newArr = [...num];
-    let result = 0;
-    for (let arg of newArr) {
-        result = result + arg;
-    };
-    return result;
+//Реализуйте функцию iterate(object, callback) которая будет итерировать все ключи переданного объекта, вызывая для каждого callback со следующим контрактом callback(key, value, object). 
+const obj = {
+	a: 1,
+	b: 2,
+	c: 3
 };
 
-console.log('Цикл for of: sum1(10, -7, 14, 15) // ' + sum1(10, -7, 14, 15));
+function iterate(object, callback) {
 
-//цикл while
-
-const sum2 = (...num) => {
-    const newArr = [...num];
-    let result = 0;
-    let i = 0;
-    while (i < newArr.length) {
-        result = result + newArr[i];
-        i++;
-    }
-    return result;
-};
-console.log('Цикл while: sum2(12, -6, 3, 4) // ' + sum2(12, -6, 3, 4));
-
-//цикл do...while
-
-const sum3 = (...num) => {
-    const newArr = [...num];
-    let i = 0;
-    let result = 0;
-    do {
-        result = result + newArr[i];
-        i++;
-    } while (i < newArr.length);
-    return result;
+	for (let key in object) {
+		let value = object[key];
+		callback(key, value, object);
+	};
 };
 
-console.log('Цикл do while: sum3(10, -15, 3, 4, 5) // ' + sum3(10, -15, 3, 4, 5));
+iterate(obj, (key, value) => {
+	console.log({
+		key,
+		value
+	});
+});
 
-// метод Array.prototype.reduce
+//Реализуйте функцию store(value) которая сохранит значение в замыкании возвращаемой функции, а после ее вызова вернет значение из замыкания
 
-const sum4 = (...num) => {
-    const newArr = [...num];
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    let result = newArr.reduce(reducer);
-    return result;
-}
-
-console.log('Метод Array.prototype.reduce: sum4(9, 6, 4, -13, 20) // ' + sum4(9, 6, 4, -13, 20));
-
-//Итерирование по двумерному массиву. Найдите максимальный элемент в двумерном массиве
-const max = (matrix) => {
-    let result = matrix[0][0];
-    for (let i = 0; i < matrix.length; i++) {
-        const row = matrix[i];
-        for (let j = 0; j < row.length; j++) {
-            const cell = row[j];
-            if (result < cell) result = cell;
-        }
-    }
-    return result;
-};
-const m = max([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
-console.log(m);
-
-//При помощи цикла for..in перебрать объект-справочник с датами рождения и смерти людей и вернуть справочник с продолжительностью их жизни. Например:
-const persons = {
-    lenin: {
-        born: 1870,
-        died: 1924
-    },
-    mao: {
-        born: 1893,
-        died: 1976
-    },
-    gandhi: {
-        born: 1869,
-        died: 1948
-    },
-    hirohito: {
-        born: 1901,
-        died: 1989
-    },
+function store(number) {
+	return function read() {
+		return `Output: ${number}`;
+	};
 };
 
-const ages = persons => {
-    const result = {};
-    for (const name in persons) {
-        const person = result[name];
-        result[name] = persons[name].died - persons[name].born;
-    }
-    return result;
-}
+const read = store(14);
+const value = read();
+console.log(value);
 
-console.log(ages(persons));
+//Реализуйте функцию contract(fn, ...types) которая оборачивает fn (первый аргумент) и проверяет типы аргументов (все аргументы кроме первого и последнего) и результата (последний аргумент), гегенрируя исключение TypeError, если типы не совпадают. 
 
-//Работа с массивами и использование методов Array
-//Реализуйте функцию removeElement(array, item) для удаления элемента item из массива array. 
 
-const array = [1, 2, 3, 4, 5, 6, 7];
-const array2 = ['Kiev', 'Beijing', 'Lima', 'Saratov'];
+const contract = (fn, ...types) => (...args) => {
+	let sameTypes = true;
+	for (let i = 0; i < args.length; i++) {
+		const def = types[i];
+		const argument = args[i];
+		sameTypes = typeof argument === def.name.toLowerCase();
+		if (!sameTypes) {
+			throw new TypeError(`Argument types do not match`);
+		}
+	}
+	const last = types.length - 1;
+	const result = fn(...args);
+	sameTypes = typeof result === types[last].name.toLowerCase();
+	if (!sameTypes) {
+		throw new TypeError(`Argument types do not match`);
+	}
+	return result;
+};
 
-const removeElement = (constName, element) => {
-    const res1 = constName.indexOf(element)
-    const result = constName.splice(res1, 1);
-    return result;
-}
-removeElement(array, 5);
-removeElement(array2, 'Lima');
+const add = (a, b, c) => a + b + c;
+const addNumbers = contract(add, Number, Number, Number);
+const res1 = addNumbers(4, 8, 32);
+console.dir(res1); // Output: 
 
-console.log(array);
-console.log(array2);
-
-//Улучшите функцию из предыдущего задания для удаления нескольких элементов из массива removeElements(array, item1, ... itemN). Например:
-
-const array4 = [1, 2, 3, 4, 5, 6, 7];
-
-const removeElements = (constName, ...items) => {
-    let newArr = constName.filter(arrItem => {
-        return !items.includes(arrItem)
-    });
-    return newArr;
-}
-
-console.log(removeElements(array4, 1, 2, 7));
+const concat = (s1, s2, s3) => s1 + s2 + s3;
+const concatStrings = contract(concat, String, String, String);
+const res2 = concatStrings('Hello ', 'world! ', 'I am Batman');
+console.dir(res2); // Output: Hello world!
